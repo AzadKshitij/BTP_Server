@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Add Item</title>
+    <%- include("./Partial/styles.ejs"); %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Update Items</h1>
+          <% results.forEach(element=> { %>
+          <!-- <form action="/api/item/addItem" method="post"> -->
+          <form
+            action="/api/shop/updateItem?id=<%= element.dataValues.id %>"
+            method="post"
+            class="form-group mb-3"
+          >
+            <%= element.dataValues.id %>
+            <div class="mb-1">
+              <label class="form-label">Type</label>
+              <input
+                type="string"
+                name="type"
+                placeholder="Type"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                value="<%= element.dataValues.type %>"
+              />
+            </div>
+
+            <div class="mb-1">
+              <label class="form-label">Unit</label>
+              <input
+                type="string"
+                name="unit"
+                placeholder="Unit"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                value="<%= element.dataValues.unit %>"
+              />
+            </div>
+
+            <div class="mb-1">
+                <label class="form-label">Price and Value</label>
+                <div id="values">
+                  <% element.dataValues.value.forEach((element, idx)=> { %>
+                      <div class="mb-3">
+                        <input type="text" name="values[<%= idx %>][0]" placeholder="Price" value="<%= element[0] %>" />
+                        <input type="text" name="values[<%= idx %>][1]" placeholder="Value" value="<%= element[1] %>" />
+                      </div>
+                      <script>
+                          var clientCount = <%= idx %>
+                      </script>
+                  <%}); %>
+                </div>
+                <button
+                  type="button"
+                  name="addField"
+                  class="btn btn-primary"
+                  onclick="onAddValue()"
+                >
+                  +
+                </button>
+              </div>
+ 
+
+            
+            <div class="mb-1">
+                <label class="form-label">Description</label>
+                <input
+                  type="text"
+                  min="0"
+                  name="description"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.description %>"
+                />
+            </div>
+            
+
+            <button type="submit" name="submit" class="btn btn-primary">
+              Update
+            </button>
+          </form>
+          <%}); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+  <%- include("./Partial/scripts.ejs"); %>
+
+  <script>
+    // create onAddValue function
+    var values = document.getElementById("values");
+    var count = clientCount;
+    function onAddValue() {
+      var div = document.createElement("div");
+      div.className = "mb-3";
+
+      var values_1 = document.createElement("input");
+      values_1.type = "text";
+      values_1.name = `values[${count}][0]`;
+      values_1.placeholder = "Price";
+
+      var values_2 = document.createElement("input");
+      values_2.type = "text";
+      values_2.name = `values[${count}][1]`;
+      values_2.placeholder = "Value";
+      div.appendChild(values_1);
+      div.appendChild(values_2);
+      values.appendChild(div);
+      count++;
+    }
+    // get element with id values
+  </script>
+</html>

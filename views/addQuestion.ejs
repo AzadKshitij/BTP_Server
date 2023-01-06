@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Add Question</title>
+    <%- include("./Partial/styles.ejs"); %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Add Question</h1>
+      <%= question %>
+
+      <form action="/api/question/addQuestion" name="dialogueForm" method="get">
+        <div class="mb-3 input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="boss-player"
+              >Boss/Player</label
+            >
+          </div>
+          <select
+            class="custom-select w-50"
+            id="boss-player"
+            name="boss_player"
+          >
+            <option value="Boss">Boss</option>
+            <option value="Player">Player</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input
+            type="string"
+            name="name"
+            placeholder="Name"
+            class="form-control"
+          />
+        </div>
+        <!-- Avatar -->
+        <div class="mb-3 input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="avatar">Avatar</label>
+          </div>
+          <select class="custom-select w-25" id="avatar" name="avatar">
+            <option value="jimmy-01.png">jimmy-01.png</option>
+            <option value="jimmy-02.png">jimmy-02.png</option>
+            <option value="jimmy-03.png">jimmy-03.png</option>
+            <option value="jimmy-04.png">jimmy-04.png</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rounded corners</label>
+          <!-- class="form-control" -->
+          <input class="form-control" name="content" id="content"></input>
+        </div>
+
+        <button type="submit" name="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+      <!-- ----------------------------------------- -->
+      <hr />
+      <!-- ----------------------------------------- -->
+      <form action="/api/question/addQuestion" method="post">
+        <div class="mb-3">
+          <label class="input-group-text">Problem</label>
+          <input
+            type="string"
+            name="problem"
+            placeholder="Problem"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="input-group-text" for="items">Difficulty</label>
+          <select class="custom-select" id="items">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+            <option value="Hardest">Hardest</option>
+            <option value="Inferno">Inferno</option>
+          </select>
+        </div>
+
+        <button type="submit" name="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+
+  <%- include("./Partial/scripts.ejs"); %>
+</html>

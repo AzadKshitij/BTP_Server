@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./Partial/styles.ejs"); %>
+</head>
+
+<body>
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <img src="Avatars/<%= userinfo.dataValues.avatar%>.png" width="100" height="100" alt="" class="circle">
+            &nbsp; <%= userinfo.dataValues.name %></a>
+                &nbsp; <%= userinfo.dataValues.email %></a>
+                    &nbsp; <%= userinfo.dataValues.rollNo %></a>
+                        <a class="navbar-brand btn btn-danger btn-small" style="color: white;"
+                            href="/auth/logout">Logout</a>
+        </div>
+    </nav>
+
+</body>
+<%- include("./Partial/scripts.ejs"); %>
+
+
+</html>

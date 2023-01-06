@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Add Item</title>
+    <%- include("./Partial/styles.ejs"); %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Add Item To Shop</h1>
+      <form action="/api/shop/addItem" method="post">
+        <div class="mb-3">
+          <label class="form-label">Type</label>
+          <input
+            type="string"
+            name="type"
+            placeholder="Type"
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Unit</label>
+          <input
+            type="string"
+            name="unit"
+            placeholder="Unit"
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <input
+            type="string"
+            name="description"
+            placeholder="Description"
+            class="form-control"
+          />
+        </div>
+
+        <div id="values">
+          <div class="mb-3">
+            <input type="text" name="values[0][0]" placeholder="Price" />
+            <input type="text" name="values[0][1]" placeholder="Value" />
+          </div>
+        </div>
+        <button
+          type="button"
+          name="addField"
+          class="btn btn-primary"
+          onclick="onAddValue()"
+        >
+          +
+        </button>
+
+        <button type="submit" name="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+
+  <%- include("./Partial/scripts.ejs"); %>
+  <script>
+    // create onAddValue function
+    var values = document.getElementById("values");
+    var count = 1;
+    function onAddValue() {
+      var div = document.createElement("div");
+      div.className = "mb-3";
+
+      var values_1 = document.createElement("input");
+      values_1.type = "text";
+      values_1.name = `values[${count}][0]`;
+      values_1.placeholder = "Price";
+
+      var values_2 = document.createElement("input");
+      values_2.type = "text";
+      values_2.name = `values[${count}][1]`;
+      values_2.placeholder = "Value";
+      div.appendChild(values_1);
+      div.appendChild(values_2);
+      values.appendChild(div);
+      count++;
+    }
+    // get element with id values
+  </script>
+</html>

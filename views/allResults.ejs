@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Add Item</title>
+    <%- include("./Partial/styles.ejs"); %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Update Items</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Time(s)</th>
+            <th scope="col">Score</th>
+            <th scope="col">XP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach(element=> { %>
+          <!-- <form action="/api/item/addItem" method="post"> -->
+            <tr>
+              <!-- <th scope="row"><%= element.dataValues.id %></th> -->
+              <td><%= element.dataValues.name %>
+              </td>
+              <td><%= element.dataValues.time/60 %>
+              </td>
+              <td><%= element.dataValues.score %>
+              </td>
+              <td><%= element.dataValues.xp %>
+              </td>
+            </tr>
+          <%}); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+  <%- include("./Partial/scripts.ejs"); %>
+</html>

@@ -1,0 +1,19 @@
+<mxfile host="65bd71144e">
+    <diagram id="KC1pvkfcaJ2XRv8hBEPQ" name="Page-1">
+        <mxGraphModel dx="1047" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="-aCC_erazLQEW7-7K1ow-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-aCC_erazLQEW7-7K1ow-1" target="-aCC_erazLQEW7-7K1ow-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="-aCC_erazLQEW7-7K1ow-1" value="&lt;b&gt;Student&lt;/b&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;name&lt;/li&gt;&lt;li&gt;googleid&lt;/li&gt;&lt;li&gt;email&lt;/li&gt;&lt;li&gt;rollNo&lt;/li&gt;&lt;li&gt;avatar&lt;/li&gt;&lt;li&gt;isFirstTimeUser&lt;/li&gt;&lt;li&gt;currentScreen&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry y="20" width="150" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="-aCC_erazLQEW7-7K1ow-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

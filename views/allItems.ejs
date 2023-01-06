@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Add Item</title>
+    <%- include("./Partial/styles.ejs"); %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Update Items</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Value</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach(element=> { %>
+          <!-- <form action="/api/item/addItem" method="post"> -->
+          <form
+            action="/api/item/updateItem?id=<%= element.dataValues.id %>"
+            method="post"
+          >
+            <tr>
+              <th scope="row"><%= element.dataValues.id %></th>
+              <td>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.name %>"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="price"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.price %>"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  name="quantity"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.quantity %>"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  min="0"
+                  name="value"
+                  step="any"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.value %>"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  min="0"
+                  name="unit"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.unit %>"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  min="0"
+                  name="description"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  value="<%= element.dataValues.description %>"
+                />
+              </td>
+              <td>
+                <button type="submit" name="submit" class="btn btn-primary">
+                  Update
+                </button>
+              </td>
+            </tr>
+          </form>
+          <%}); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+  <%- include("./Partial/scripts.ejs"); %>
+</html>

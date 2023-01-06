@@ -1,0 +1,42 @@
+{
+  "name": "circuitgameserver",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "sequelize db:migrate && node app.js ",
+    "dev": "sequelize db:migrate && nodemon app.js",
+    "createDB": "sequelize db:create",
+    "migrate": "sequelize db:migrate"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.6",
+    "express": "~4.16.1",
+    "express-list-endpoints": "^6.0.0",
+    "http": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "node-fetch": "2.6.1",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "nodemon": "^2.0.12"
+  },
+  "type": "commonjs"
+}

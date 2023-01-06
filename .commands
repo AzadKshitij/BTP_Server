@@ -1,0 +1,1 @@
+sequelize model:generate --name Result --attributes name:string,email:string,score:integer,rollNo:string

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>
+        Add Item
+    </title>
+    <%- include("./Partial/styles.ejs"); %>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Item</h1>
+        <form action="/api/item/addItem" method="post">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="string" name="name" placeholder="Name" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="number" name="price" min="0" placeholder="Price" class="form-control"
+                    aria-describedby="priceofobject">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <input type="number" name="quantity" min="0" placeholder="Quantity" class="form-control">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Value</label>
+                <input type="text" min="0" step=any name="value" placeholder="Value" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Unit</label>
+                <input type="string" name="unit" placeholder="Unit" class="form-control">
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <input type="string" name="description" placeholder="Description" class="form-control">
+            </div>
+
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+<%- include("./Partial/scripts.ejs"); %>
+
+</html>

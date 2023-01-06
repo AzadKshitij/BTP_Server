@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Add Game</title>
+    <%- include("./Partial/styles.ejs"); %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Add Game</h1>
+      <form action="/api/game/addGame" method="post">
+        <label class="form-label">Start Date and Time</label>
+        <input
+          type="date"
+          class="form-control my-2"
+          id="startDate"
+          name="startDate"
+        />
+
+        <input
+          type="time"
+          class="form-control my-2"
+          id="startTime"
+          name="startTime"
+          min="00:00"
+          max="23:59"
+          placeholder="Time"
+          defaultValue="08:00"
+        />
+
+        <label class="form-label">End Date and Time</label>
+        <input
+          type="date"
+          class="form-control my-2"
+          id="endDate"
+          name="endDate"
+        />
+
+        <input
+          type="time"
+          class="form-control my-2"
+          id="endTime"
+          name="endTime"
+          min="00:00"
+          max="23:59"
+          defaultValue="08:00"
+        />
+
+        <button type="submit" name="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+
+  <%- include("./Partial/scripts.ejs"); %>
+</html>
