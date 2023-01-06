@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "nogbiykp",
-    "password": "MxbE7o0A1gdTc6SBbpt4mf4ZSi0xaZwo",
+    "password": "mYBI-HIQFkZLrlYJ3au4CgEUfsnLeliW",
     "database": "nogbiykp",
-    "host": "dpg-ces70qla499cn4mv1820-a.singapore-postgres.render.com",
+    "host": "satao.db.elephantsql.com",
     "dialect": "postgres",
     "port": "5432",
     "ssl": true,
@@ -15,9 +15,9 @@
   },
   "test": {
     "username": "nogbiykp",
-    "password": "MxbE7o0A1gdTc6SBbpt4mf4ZSi0xaZwo",
+    "password": "mYBI-HIQFkZLrlYJ3au4CgEUfsnLeliW",
     "database": "nogbiykp",
-    "host": "dpg-ces70qla499cn4mv1820-a.singapore-postgres.render.com",
+    "host": "satao.db.elephantsql.com",
     "dialect": "postgres",
     "port": "5432",
     "ssl": true,
@@ -29,9 +29,9 @@
   },
   "production": {
     "username": "nogbiykp",
-    "password": "MxbE7o0A1gdTc6SBbpt4mf4ZSi0xaZwo",
+    "password": "mYBI-HIQFkZLrlYJ3au4CgEUfsnLeliW",
     "database": "nogbiykp",
-    "host": "dpg-ces70qla499cn4mv1820-a.singapore-postgres.render.com",
+    "host": "satao.db.elephantsql.com",
     "dialect": "postgres",
     "port": "5432",
     "ssl": true,
