@@ -24,7 +24,11 @@ if (process.env.PRODUCTION == "true") {
   const uri = process.env.DATABASE_URI;
   console.log("🚀 ~ file: index.js ~ line 25 ~ uri", uri);
 
-  sequelize = new Sequelize(uri);
+  sequelize = new Sequelize(uri, {
+    dialect: "postgres",
+    protocol: "postgres",
+    dialectOptions: {}, //removed ssl
+  });
 } else {
   sequelize = new Sequelize(
     config.database,
